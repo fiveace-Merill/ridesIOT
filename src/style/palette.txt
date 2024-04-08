@@ -1,0 +1,35 @@
+/* Coolors Exported Palette - https://coolors.co/c8e7e8-01182b-379637-6cf437-f0f8f6 */
+
+- Tailwind
+
+{ 'light_cyan': { DEFAULT: '#C8E7E8', 100: '#1a3c3d', 200: '#33787a', 300: '#4fb2b5', 400: '#8ccdcf', 500: '#c8e7e8', 600: '#d4eced', 700: '#dff1f1', 800: '#e9f6f6', 900: '#f4fafa' }, 'oxford_blue': { DEFAULT: '#01182B', 100: '#000509', 200: '#000a12', 300: '#010f1b', 400: '#011424', 500: '#01182b', 600: '#034c87', 700: '#067fe2', 800: '#4aabfa', 900: '#a5d5fd' }, 'forest_green': { DEFAULT: '#379637', 100: '#0b1e0b', 200: '#163c16', 300: '#215921', 400: '#2c772c', 500: '#379637', 600: '#4cbd4c', 700: '#79cd79', 800: '#a6dea6', 900: '#d2eed2' }, 'bright_green': { DEFAULT: '#6CF437', 100: '#123903', 200: '#257206', 300: '#37ac09', 400: '#49e50c', 500: '#6cf437', 600: '#8bf760', 700: '#a8f988', 800: '#c5fbb0', 900: '#e2fdd7' }, 'mint_cream': { DEFAULT: '#F0F8F6', 100: '#1f433a', 200: '#3f8574', 300: '#6cbaa6', 400: '#afd9ce', 500: '#f0f8f6', 600: '#f4faf8', 700: '#f7fbfa', 800: '#f9fcfc', 900: '#fcfefd' } }
+
+- CSV
+
+C8E7E8,01182B,379637,6CF437,F0F8F6
+
+- With #
+
+#C8E7E8, #01182B, #379637, #6CF437, #F0F8F6
+
+- Array
+
+["C8E7E8","01182B","379637","6CF437","F0F8F6"]
+
+- Object
+
+{"Light cyan":"C8E7E8","Oxford Blue":"01182B","Forest green":"379637","Bright green":"6CF437","Mint cream":"F0F8F6"}
+
+- Extended Array
+
+[{"name":"Light cyan","hex":"C8E7E8","rgb":[200,231,232],"cmyk":[14,0,0,9],"hsb":[182,14,91],"hsl":[182,41,85],"lab":[90,-10,-4]},{"name":"Oxford Blue","hex":"01182B","rgb":[1,24,43],"cmyk":[98,44,0,83],"hsb":[207,98,17],"hsl":[207,95,9],"lab":[8,-1,-16]},{"name":"Forest green","hex":"379637","rgb":[55,150,55],"cmyk":[63,0,63,41],"hsb":[120,63,59],"hsl":[120,46,40],"lab":[55,-47,41]},{"name":"Bright green","hex":"6CF437","rgb":[108,244,55],"cmyk":[56,0,77,4],"hsb":[103,77,96],"hsl":[103,90,59],"lab":[86,-68,73]},{"name":"Mint cream","hex":"F0F8F6","rgb":[240,248,246],"cmyk":[3,0,1,3],"hsb":[165,3,97],"hsl":[165,36,96],"lab":[97,-3,0]}]
+
+- XML
+
+<palette>
+  <color name="Light cyan" hex="C8E7E8" r="200" g="231" b="232" />
+  <color name="Oxford Blue" hex="01182B" r="1" g="24" b="43" />
+  <color name="Forest green" hex="379637" r="55" g="150" b="55" />
+  <color name="Bright green" hex="6CF437" r="108" g="244" b="55" />
+  <color name="Mint cream" hex="F0F8F6" r="240" g="248" b="246" />
+</palette>

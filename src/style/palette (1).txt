@@ -1,0 +1,35 @@
+/* Coolors Exported Palette - https://coolors.co/0dc9ce-c8e7e8-174835-031d29-379637 */
+
+- Tailwind
+
+{ 'robin_egg_blue': { DEFAULT: '#0DC9CE', 100: '#032829', 200: '#055052', 300: '#08787c', 400: '#0ba0a5', 500: '#0dc9ce', 600: '#24eaf1', 700: '#5beff5', 800: '#92f5f8', 900: '#c8fafc' }, 'light_cyan': { DEFAULT: '#C8E7E8', 100: '#1a3c3d', 200: '#33787a', 300: '#4fb2b5', 400: '#8ccdcf', 500: '#c8e7e8', 600: '#d4eced', 700: '#dff1f1', 800: '#e9f6f6', 900: '#f4fafa' }, 'brunswick_green': { DEFAULT: '#174835', 100: '#050f0b', 200: '#091d16', 300: '#0e2c21', 400: '#133b2b', 500: '#174835', 600: '#2b8865', 700: '#43c492', 800: '#81d7b6', 900: '#c0ebdb' }, 'rich_black': { DEFAULT: '#031D29', 100: '#010609', 200: '#010c11', 300: '#02121a', 400: '#031822', 500: '#031d29', 600: '#0a5b81', 700: '#1098d7', 800: '#52bff2', 900: '#a9dff9' }, 'forest_green': { DEFAULT: '#379637', 100: '#0b1e0b', 200: '#163c16', 300: '#215921', 400: '#2c772c', 500: '#379637', 600: '#4cbd4c', 700: '#79cd79', 800: '#a6dea6', 900: '#d2eed2' } }
+
+- CSV
+
+0DC9CE,C8E7E8,174835,031D29,379637
+
+- With #
+
+#0DC9CE, #C8E7E8, #174835, #031D29, #379637
+
+- Array
+
+["0DC9CE","C8E7E8","174835","031D29","379637"]
+
+- Object
+
+{"Robin egg blue":"0DC9CE","Light cyan":"C8E7E8","Brunswick green":"174835","Rich black":"031D29","Forest green":"379637"}
+
+- Extended Array
+
+[{"name":"Robin egg blue","hex":"0DC9CE","rgb":[13,201,206],"cmyk":[94,2,0,19],"hsb":[182,94,81],"hsl":[182,88,43],"lab":[74,-38,-14]},{"name":"Light cyan","hex":"C8E7E8","rgb":[200,231,232],"cmyk":[14,0,0,9],"hsb":[182,14,91],"hsl":[182,41,85],"lab":[90,-10,-4]},{"name":"Brunswick green","hex":"174835","rgb":[23,72,53],"cmyk":[68,0,26,72],"hsb":[157,68,28],"hsl":[157,52,19],"lab":[27,-22,7]},{"name":"Rich black","hex":"031D29","rgb":[3,29,41],"cmyk":[93,29,0,84],"hsb":[199,93,16],"hsl":[199,86,9],"lab":[9,-5,-11]},{"name":"Forest green","hex":"379637","rgb":[55,150,55],"cmyk":[63,0,63,41],"hsb":[120,63,59],"hsl":[120,46,40],"lab":[55,-47,41]}]
+
+- XML
+
+<palette>
+  <color name="Robin egg blue" hex="0DC9CE" r="13" g="201" b="206" />
+  <color name="Light cyan" hex="C8E7E8" r="200" g="231" b="232" />
+  <color name="Brunswick green" hex="174835" r="23" g="72" b="53" />
+  <color name="Rich black" hex="031D29" r="3" g="29" b="41" />
+  <color name="Forest green" hex="379637" r="55" g="150" b="55" />
+</palette>

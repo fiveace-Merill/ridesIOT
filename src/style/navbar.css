@@ -1,0 +1,13 @@
+@media (max-width: 767px) {
+    .phone-list {
+        border-bottom: solid 2px #d2eed2;
+        border-bottom-left-radius: 20%;
+        border-color: #2c772c;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: #d2eed2;
+        margin-left: 5px;
+        padding-left: 5px;
+        text-align: center;
+    }
+}

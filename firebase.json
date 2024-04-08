@@ -1,0 +1,76 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint"
+      ]
+    }
+  ],
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "emulators": {
+    "auth": {
+      "port": 2024
+    },
+    "functions": {
+      "port": 2025
+    },
+    "firestore": {
+      "port": 2026
+    },
+    "database": {
+      "port": 2027
+    },
+    "hosting": {
+      "port": 2028
+    },
+    "pubsub": {
+      "port": 2029
+    },
+    "storage": {
+      "port": 2030
+    },
+    "eventarc": {
+      "port": 2031
+    },
+    "ui": {
+      "enabled": true,
+      "port": 2032
+    },
+    "singleProjectMode": true
+  },
+  "remoteconfig": {
+    "template": "remoteconfig.template.json"
+  },
+  "extensions": {}
+}
