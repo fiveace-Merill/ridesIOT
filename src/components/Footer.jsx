@@ -1,9 +1,13 @@
-function Footer(){
-    return(
+
+function Footer() {
+    return (
         <div>
-            Social Media
-            Copyright Section
-            Company Address
+            <div>
+                <p>socials</p>
+            </div>
+            <div>
+                <p>copyright</p>
+            </div>
         </div>
     )
 }

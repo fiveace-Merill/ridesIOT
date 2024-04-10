@@ -67,6 +67,9 @@ export default {
           800: '#a6dea6',
           900: '#d2eed2'
         }
+      },
+      backgroundImage: {
+        'menu-texture': "url('./src/assets/texture.png')"
       }
     },
   },
