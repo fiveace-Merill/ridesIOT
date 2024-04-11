@@ -5,8 +5,8 @@ import Login from './pages/Login'
 export default function App() {
   return (
     <div className='h-auto text-white'>
-      {/* <Home /> */}
-      <Login />
+      <Home />
+      {/* <Login /> */}
     </div>
   )
 }
