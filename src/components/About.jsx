@@ -6,7 +6,7 @@ import arrow from '../assets/arrow.png'
 
 function About() {
     return (
-        <div className='flex flex-col items-center my-0 box-border justify-center p-1` md:my-5 md:flex-row' id='about'>
+        <div className='w-screen flex flex-col items-center my-0 box-border justify-center p-1` md:my-5 md:flex-row' id='about'>
             <div className='ctn md:flex md:flex-col'>
                 <div className='py-3 px-0 my-0 w-full mb-3'>
                     <h3 className='text-xl text-center tracking-wider leading-5 md:text-3xl lg:text-4xl font-bold text-forest_green-400'>Adventure Awaits</h3>
@@ -16,9 +16,9 @@ function About() {
                         <label htmlFor='email' className='bg-robin_egg_blue-400 rounded-lg p-2 text-base self-center'>Get Started</label>
                     </div>
                 </div>
-                <div className='md:flex'>
-                    <div className='pb-2 text-sm h-4/5 w-full bg-rich_black-300 mb-5 text-forest_green-900 rounded-2xl flex flex-col items-center justify-center md:h-2/6 md:w-2/6 md:m-0 md:mx-5'>
-                        <img src={iot} className='product-image-small opacity-70' />
+                <div className='mx-2 md:flex'>
+                    <div className='pb-2 text-sm h-4/5 w-full bg-rich_black-300 mb-5 text-forest_green-900 rounded-t-3xl flex flex-col items-center justify-center md:h-2/6 md:w-2/6 md:m-0 md:mx-5'>
+                        <img src={iot} className='product-image-small opacity-70 rounded-t-3xl' />
                         <p className='description p-3 md:p-0'>Discover the future with our IoT platform, a revolution in smart devices and bicycles. We are not just a business, we are a community dedicated to enhancing your daily life with our diverse range of products.</p>
                         <div className='mb-2 flex bg-forest_green-400 hover:bg-robin_egg_blue-400 rounded-lg h-9 w-2/4 items-center justify-center'>
                             <button className='button'>IoT</button>
@@ -26,7 +26,7 @@ function About() {
                         </div>
                     </div>
                     <div className='pb-2 text-sm h-4/5 w-full bg-rich_black-300 mb-5 text-forest_green-900 rounded-2xl flex flex-col items-center justify-center md:h-2/6 md:w-2/6 md:m-0 md:mx-5'>
-                        <img src={chart} className='product-image-small opacity-70' />
+                        <img src={chart} className='product-image-small opacity-70 rounded-t-3xl' />
                         <p className='description py-4 md:p-0'>Discover the future with our IoT platform, a revolution in smart devices and bicycles. We are not just a business, we are a community dedicated to enhancing your daily life with our diverse range of products.</p>
                         <div className='mb-2 flex bg-forest_green-400 hover:bg-robin_egg_blue-400 rounded-lg h-9 w-2/4 items-center justify-center'>
                             <button className='button'>Events</button>
@@ -34,7 +34,7 @@ function About() {
                         </div>
                     </div>
                     <div className='pb-2 text-sm h-4/5 w-full bg-rich_black-300 mb-5 text-forest_green-900 rounded-2xl flex flex-col items-center justify-center md:h-2/6 md:w-2/6 md:m-0 md:mx-5'>
-                        <img src={bike1} className='product-image-small opacity-70' />
+                        <img src={bike1} className='product-image-small opacity-70 rounded-t-3xl' />
                         <p className='description py-4 md:p-0'>Discover the future with our IoT platform, a revolution in smart devices and bicycles. We are not just a business, we are a community dedicated to enhancing your daily life with our diverse range of products.</p>
                         <div className='mb-2 flex bg-forest_green-400 hover:bg-robin_egg_blue-400 rounded-lg h-9 w-2/4 items-center justify-center'>
                             <button className='button'>Bikes</button>
