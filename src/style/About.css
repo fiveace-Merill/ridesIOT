@@ -1,6 +1,14 @@
-.product-image {
-    height: 100vw;
-    width: 100%
+@media (max-width: 767px) {
+    .product-image-small {
+        height: 100vw;
+        width: 100%
+    }
+}
+
+@media (max-width: 767) {
+    .form-ctn {
+        display: none;
+    }
 }
 
 .description {
