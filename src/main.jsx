@@ -31,7 +31,7 @@ const router = createBrowserRouter([
   {
     path: "Admin/:AdminId",
     element: <Admin />
-  }
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -1,7 +1,9 @@
+import Dashboard from "../components/admin/Dashboard"
+
 function Admin() {
     return (
-        <div>
-            <p>ADMIN CODE HERE</p>
+        <div className="md:w-screen md:h-screen">
+            <Dashboard />
         </div>
     )
 }
