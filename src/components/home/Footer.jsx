@@ -1,7 +1,7 @@
-import whatsapp from '../assets/whatsapp.png'
-import instagram from '../assets/instagram.png'
-import twitter from '../assets/twitter.png'
-import email from '../assets/email.png'
+import whatsapp from '../../assets/whatsapp.png'
+import instagram from '../../assets/instagram.png'
+import twitter from '../../assets/twitter.png'
+import email from '../../assets/email.png'
 
 function Footer() {
     return (

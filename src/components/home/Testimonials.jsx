@@ -1,4 +1,4 @@
-import logo from '../assets/profile-picture-1.jpg'
+import logo from '../../assets/profile-picture-1.jpg'
 function Testimonials() {
     return (
         <div className='md:my-16 md:w-full'>

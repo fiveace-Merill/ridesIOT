@@ -3,8 +3,8 @@ import message from '../../assets/message.png'
 import profile from '../../assets/profile-picture-1.jpg'
 function Header() {
     return (
-        <div className="md:fixed md:z-20 md:flex md:w-auto md:h-14 md:items-center md:my-2 md:ml-6 md:bg-yellow-500">
-            <input type='text' placeholder="search" className='md:pl-5 md:ml-10 md:w-1/4 h-8 md:self-center rounded-md'></input>
+        <div className="header md:my-3 md:ml-2 md:sticky md:z-20 md:flex md:h-14 md:w-[99%] md:items-center md:rounded-full md:shadow-md md:shadow-yellow-100 md:bg-yellow-300">
+            <input type='text' placeholder="search" className='md:pl-5 md:rounded-full md:w-1/4 h-full md:self-center rounded-md'></input>
             <div className="md:flex md:h-full md:ml-auto md:mr-16 md:items-center md:justify-center md:py-5">
                 <div className='md:relative'>
                     <img src={notification} alt="notification" className='h-7 w-7 md:my-[50%] md:mx-5' />

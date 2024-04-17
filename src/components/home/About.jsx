@@ -1,8 +1,8 @@
-import '../style/About.css'
-import iot from '../assets/iot1.jpg'
-import bike1 from '../assets/bike1.jpg'
-import chart from '../assets/chart.jpg'
-import arrow from '../assets/arrow.png'
+import '../../style/About.css'
+import iot from '../../assets/iot1.jpg'
+import bike1 from '../../assets/bike1.jpg'
+import chart from '../../assets/chart.jpg'
+import arrow from '../../assets/arrow.png'
 
 function About() {
     return (

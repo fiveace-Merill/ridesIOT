@@ -1,7 +1,7 @@
-import '../style/services.css'
-import bikeSolid from '../assets/bicycle-solid.svg'
-import calendarSolid from '../assets/calendar-days-solid.svg'
-import CircleSolid from '../assets/circle-nodes-solid.svg'
+import '../../style/services.css'
+import bikeSolid from '../../assets/bicycle-solid.svg'
+import calendarSolid from '../../assets/calendar-days-solid.svg'
+import CircleSolid from '../../assets/circle-nodes-solid.svg'
 function Services() {
     return (
         <div id='services'>

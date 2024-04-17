@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import 'animate.css'
-import logo from '../assets/logo2.jpeg';
-import humburger from '../assets/humburger.png';
-import close from '../assets/close.png'
-import '../style/navbar.css'
+import logo from '../../assets/logo2.jpeg';
+import humburger from '../../assets/humburger.png';
+import close from '../../assets/close.png'
+import '../../style//navbar.css'
 import { Link } from 'react-router-dom';
 
 function Navbar() {

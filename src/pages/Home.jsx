@@ -1,8 +1,8 @@
-import Navbar from "../components/Navbar"
-import About from "../components/About"
-import Services from "../components/Services"
-import Testimonials from '../components/Testimonials'
-import Footer from "../components/Footer"
+import Navbar from "../components/home/Navbar"
+import About from "../components/home/About"
+import Services from "../components/home/Services"
+import Testimonials from '../components/home/Testimonials'
+import Footer from "../components/home/Footer"
 
 
 function Home() {

@@ -1,11 +1,19 @@
-function Content() {
-    return (
-        <div className='md:w-full md:h-full bg-blue-300 md:flex-1 overflow-y-auto'>
-            <div className="container mx-auto py-2">
-                <p>Add Dynamic content from sidebar actions</p>
-            </div>
-        </div>
-    )
+import Bike from './Bike'
+import Events from './Events'
+import Iot from './Iot'
+import Default from './Default'
+
+function Content({ menuItem }) {
+    switch (menuItem) {
+        case (menuItem === 'Bikes'):
+            return <Bike />
+        case (menuItem === 'menu-item-2'):
+            return <Iot />
+        case (menuItem === 'menu-item-3'):
+            return <Events />
+        default:
+            return <Default />
+    }
 }
 
 export default Content
