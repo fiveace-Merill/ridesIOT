@@ -42,8 +42,9 @@ function Bike() {
     };
 
     useEffect(() => {
+        console.log(bikeDetails)
 
-    }, [bikeDetails])
+    }, [])
 
     return (
         <div className="w-full h-[99%] md:bg-slate-100 md:p-3 md:grid md:grid-cols-3 md:gap-3 md:relative">
