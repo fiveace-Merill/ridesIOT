@@ -16,9 +16,9 @@ function Sidebar({ toggleClick }) {
                     <div>
                         <h4 onClick={handleClick} className="md:hover:cursor-pointer">Products</h4>
                         <div className="hidden md:p-3" id="bike-menu">
-                            <p className="hover:cursor-pointer" id="menu-item-1" onClick={(event) => toggleClick(event.target.value)}>Bikes</p>
-                            <p className="hover:cursor-pointer" id="menu-item-2" onClick={(event) => toggleClick(event.target.value)}>IoT</p>
-                            <p className="hover:cursor-pointer" id="menu-item-3" onClick={(event) => toggleClick(event.target.value)}>Events</p>
+                            <p className="hover:cursor-pointer" id="menu-item-1" onClick={(event) => toggleClick(event.target.textContent)}>Bikes</p>
+                            <p className="hover:cursor-pointer" id="menu-item-2" onClick={(event) => toggleClick(event.target.textContent)}>IoT</p>
+                            <p className="hover:cursor-pointer" id="menu-item-3" onClick={(event) => toggleClick(event.target.textContent)}>Events</p>
                         </div>
                     </div>
                     <div>

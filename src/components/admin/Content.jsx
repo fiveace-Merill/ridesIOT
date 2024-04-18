@@ -1,19 +1,29 @@
-import Bike from './Bike'
-import Events from './Events'
-import Iot from './Iot'
-import Default from './Default'
+import Bike from './Bike';
+import Events from './Events';
+import Iot from './Iot';
+import Default from './Default';
 
 function Content({ menuItem }) {
+    let component;
     switch (menuItem) {
-        case (menuItem === 'Bikes'):
-            return <Bike />
-        case (menuItem === 'menu-item-2'):
-            return <Iot />
-        case (menuItem === 'menu-item-3'):
-            return <Events />
+        case 'Bikes':
+            component = <Bike />;
+            break;
+        case 'IoT':
+            component = <Iot />;
+            break;
+        case 'Events':
+            component = <Events />;
+            break;
         default:
-            return <Default />
+            component = <Default />;
     }
+
+    return (
+        <div className='container md:w-full md:h-full'>
+            {component}
+        </div>
+    );
 }
 
-export default Content
+export default Content;

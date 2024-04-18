@@ -8,7 +8,6 @@ function Dashboard() {
     function setToggle(value) {
         setClicked(value)
     }
-
     return (
         <div className="md:m-0 md:w-full md:h-full md:flex md:bg-white">
             <Sidebar toggleClick={setToggle} />
