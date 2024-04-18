@@ -1,0 +1,24 @@
+label {
+    color: #031d29;
+    font-weight: normal;
+    font-size: small;
+}
+
+input {
+    width: 40%;
+    height: 20px;
+    padding: 5px;
+    margin: 3px 5px;
+    border: 1px solid none;
+    font-size: medium;
+    color: #163c16;
+}
+
+textarea {
+    padding: 4px;
+    margin: 1px 2px;
+    width: 100%;
+    color: #163c16;
+    border: 1px solid #0b1e0b;
+    border-radius: 0.375rem;
+}
