@@ -1,4 +1,4 @@
-import '../../style/admin/addbike.css'
+import '../../style/admin/bike.css'
 
 function AddBike({ bikeDetails, handleSubmit, handleInputChange }) {
     return (

@@ -93,8 +93,9 @@ function Bike() {
                 <h3 className="text-center text-lg text-robin_egg_blue-400 font-extrabold">Add Bike</h3>
                 <AddBike bikeDetails={bikeDetails} handleSubmit={handleAddSubmit} handleInputChange={handleAddInputChange}></AddBike>
             </div>
-            <div className="md:bg-yellow-700 md:rounded-lg">
-                <h3>Delete Bike</h3>
+            <div className="md:bg-white md:rounded-xl md:shadow-lg md:shadow-robin_egg_blue-300 md:flex md:flex-col md:items-center md:justify-around md:px-2 md:py-3">
+                <h3 className="text-center text-lg text-robin_egg_blue-400 font-extrabold">Delete Bike</h3>
+                <p className="md:text-rich_black-200 md:text-md md:text-justify md:mt-10">Enter Product Id in the field below to delete</p>
                 <DeleteBike handleInputChange={handleDeleteInputChange} handleSubmit={handleDeleteSubmit}></DeleteBike>
             </div>
             <div className="md:row-start-2 md:col-2 md:bg-rich_black-500 md:rounded-lg">
