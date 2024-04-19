@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react"
+import { addDoc, onSnapshot, collection } from "firebase/firestore";
+import { db } from '../../index'
 import AddBike from "./AddBike";
 function Bike() {
+
+    let colRef = collection(db, 'bikes')
+
     const [bikeDetails, setBikeDetails] = useState({
         name: '',
         design: '',
@@ -36,14 +41,17 @@ function Bike() {
     };
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Here you would typically send the bikeDetails to a server
-        // or save it in a JSON file as needed
-        console.log(bikeDetails);
+        addDoc(colRef, bikeDetails)
     };
 
     useEffect(() => {
-        console.log(bikeDetails)
-
+        onSnapshot(colRef, (snapshot)=>{
+            let bikes = []
+            snapshot.forEach((doc) =>{
+                bikes.push({...doc.data(), id: doc.id})
+            })
+            console.log(bikes)
+        })
     }, [])
 
     return (
