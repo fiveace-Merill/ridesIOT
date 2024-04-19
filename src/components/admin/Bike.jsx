@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react"
-import { addDoc, onSnapshot, collection } from "firebase/firestore";
+import { addDoc, deleteDoc, onSnapshot, collection, doc } from "firebase/firestore";
 import { db } from '../../index'
 import AddBike from "./AddBike";
+import DeleteBike from "./DeleteBike";
 function Bike() {
 
     let colRef = collection(db, 'bikes')
 
+    const [id, setId] = useState()
     const [bikeDetails, setBikeDetails] = useState({
         name: '',
         design: '',
@@ -22,7 +24,7 @@ function Bike() {
             suspension: '',
         }
     });
-    const handleInputChange = (e) => {
+    const handleAddInputChange = (e) => {
         const { name, value } = e.target;
         if (name in bikeDetails.features) {
             setBikeDetails({
@@ -39,29 +41,61 @@ function Bike() {
             });
         }
     };
-    const handleSubmit = (event) => {
+
+    const handleDeleteInputChange = (event) => {
+        const { value } = event.target
+        if (value === '') {
+            console.log('Id is required')
+        } else {
+            setId(value)
+        }
+    }
+    const handleAddSubmit = (event) => {
         event.preventDefault();
-        addDoc(colRef, bikeDetails)
+        // Check if any of the main fields are empty
+        if (!bikeDetails.name || !bikeDetails.design || !bikeDetails.price || !bikeDetails.description) {
+            console.log('Please fill in all the fields.');
+            return;
+        }
+        // Check if any of the feature fields are empty
+        for (const feature in bikeDetails.features) {
+            if (!bikeDetails.features[feature]) {
+                console.log('Please fill in all the features.');
+                return;
+            }
+        }
+        // If all fields are filled, proceed to add the document to Firestore
+        addDoc(colRef, bikeDetails);
     };
+    const handleDeleteSubmit = (event) => {
+        event.preventDefault();
+        if (id) {
+            const docRef = doc(db, 'bikes', id);
+            deleteDoc(docRef);
+        } else {
+            console.log('Id is required');
+        }
+    }
 
     useEffect(() => {
-        onSnapshot(colRef, (snapshot)=>{
+        onSnapshot(colRef, (snapshot) => {
             let bikes = []
-            snapshot.forEach((doc) =>{
-                bikes.push({...doc.data(), id: doc.id})
+            snapshot.forEach((doc) => {
+                bikes.push({ ...doc.data(), id: doc.id })
             })
             console.log(bikes)
         })
-    }, [])
+    }, [bikeDetails])
 
     return (
         <div className="w-full h-[99%] md:bg-slate-100 md:p-3 md:grid md:grid-cols-3 md:gap-3 md:relative">
             <div className="md:px-5 md:py-2 md:h-[99%] md:rounded-xl md:row-span-2 md:col-span-1 md:row-start-1 md:col-start-1 md:bg-white md:shadow-lg md:shadow-robin_egg_blue-300 md:hover:z-50">
                 <h3 className="text-center text-lg text-robin_egg_blue-400 font-extrabold">Add Bike</h3>
-                <AddBike bikeDetails={bikeDetails} handleSubmit={handleSubmit} handleInputChange={handleInputChange}></AddBike>
+                <AddBike bikeDetails={bikeDetails} handleSubmit={handleAddSubmit} handleInputChange={handleAddInputChange}></AddBike>
             </div>
             <div className="md:bg-yellow-700 md:rounded-lg">
                 <h3>Delete Bike</h3>
+                <DeleteBike handleInputChange={handleDeleteInputChange} handleSubmit={handleDeleteSubmit}></DeleteBike>
             </div>
             <div className="md:row-start-2 md:col-2 md:bg-rich_black-500 md:rounded-lg">
                 <h3>Update Bike</h3>
