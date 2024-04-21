@@ -18,6 +18,7 @@ function QueryBike({ handleInputChange, handleSubmit, details }) {
                     <li>Design: {details.design}</li>
                     <li>Price: {details.price}</li>
                 </ul>
+                <p>Features</p>
             </div>
         </div>
     )

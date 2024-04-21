@@ -48,7 +48,7 @@ function Bike() {
     const handleDeleteInputChange = (event) => {
         const { value } = event.target
         if (value === '') {
-            console.log('Id is required')
+            alert('Id is required')
         } else {
             setId(value)
         }
@@ -56,7 +56,7 @@ function Bike() {
     const handleQueryInputChange = (event) => {
         const { value } = event.target
         if (value === '') {
-            console.log('Id is required')
+            alert('Id is required')
         } else {
             setId(value)
         }
@@ -71,7 +71,7 @@ function Bike() {
         // Check if any of the feature fields are empty
         for (const feature in bikeDetails.features) {
             if (!bikeDetails.features[feature]) {
-                console.log('Please fill in all the features.');
+                alert('Please fill in all the features.');
                 return;
             }
         }
@@ -84,19 +84,20 @@ function Bike() {
             const docRef = doc(db, 'bikes', id);
             deleteDoc(docRef);
         } else {
-            console.log('Id is required');
+            alert('Id is required');
         }
     }
-    const handleQuerySubmit = (event) => {
+
+    const handleQuerySubmit = async (event) => {
         event.preventDefault();
         if (id) {
             const docRef = doc(db, 'bikes', id);
             onSnapshot(docRef, (doc) => {
                 if (doc.exists()) {
                     query = setQuery({ ...doc.data(), id: id })
-                    console.log("Document data:", query);
+                    return query
                 } else {
-                    console.log("No such document!");
+                    alert("No such document!");
                 }
             });
         }
