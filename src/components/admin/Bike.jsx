@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react"
-import { addDoc, deleteDoc, onSnapshot, collection, doc } from "firebase/firestore";
+import { addDoc, deleteDoc, onSnapshot, collection, doc, query, where } from "firebase/firestore";
 import { db } from '../../index'
 import AddBike from "./AddBike";
 import DeleteBike from "./DeleteBike";
+// import UpdateBike from "./UpdateBike";
+import QueryBike from "./QueryBike";
 function Bike() {
 
     let colRef = collection(db, 'bikes')
 
     const [id, setId] = useState()
+    let [query, setQuery] = useState({})
     const [bikeDetails, setBikeDetails] = useState({
         name: '',
         design: '',
@@ -50,6 +53,14 @@ function Bike() {
             setId(value)
         }
     }
+    const handleQueryInputChange = (event) => {
+        const { value } = event.target
+        if (value === '') {
+            console.log('Id is required')
+        } else {
+            setId(value)
+        }
+    }
     const handleAddSubmit = (event) => {
         event.preventDefault();
         // Check if any of the main fields are empty
@@ -76,6 +87,21 @@ function Bike() {
             console.log('Id is required');
         }
     }
+    const handleQuerySubmit = (event) => {
+        event.preventDefault();
+        if (id) {
+            const docRef = doc(db, 'bikes', id);
+            onSnapshot(docRef, (doc) => {
+                if (doc.exists()) {
+                    query = setQuery({ ...doc.data(), id: id })
+                    console.log("Document data:", query);
+                } else {
+                    console.log("No such document!");
+                }
+            });
+        }
+    }
+
 
     useEffect(() => {
         onSnapshot(colRef, (snapshot) => {
@@ -98,11 +124,12 @@ function Bike() {
                 <p className="md:text-rich_black-200 md:text-md md:text-justify md:mt-10">Enter Product Id in the field below to delete</p>
                 <DeleteBike handleInputChange={handleDeleteInputChange} handleSubmit={handleDeleteSubmit}></DeleteBike>
             </div>
-            <div className="md:row-start-2 md:col-2 md:bg-rich_black-500 md:rounded-lg">
-                <h3>Update Bike</h3>
+            <div className="md:row-start-2 md:col-2 md:bg-white md:rounded-lg md:shadow-xl md:shadow-robin_egg_blue-300 md:px-2 md:py-3">
+                <h3 className="text-center text-lg text-robin_egg_blue-400 font-extrabold">Delete Bike</h3>
+                <QueryBike handleInputChange={handleQueryInputChange} handleSubmit={handleQuerySubmit} details={query}></QueryBike>
             </div>
-            <div className="md:col-start-3 md:row-span-2 md:bg-brunswick_green-500 md:rounded-lg">
-                <h3>Get bike</h3>
+            <div className="md:col-start-3 md:row-span-2 md:bg-white md:rounded-lg md:shadow-xl md:shadow-robin_egg_blue-300 md:px-2 md:py-3">
+                <h3>Update Bike</h3>
             </div>
 
         </div>
