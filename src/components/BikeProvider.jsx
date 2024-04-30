@@ -19,6 +19,8 @@ async function getBikeData() {
         console.log("Error obtaining bike details data")
     }
 }
+
+
 function BikeProvider({ children }) {
     const [data, setData] = useState(null)
     const [isLoading, setLoading] = useState(true)

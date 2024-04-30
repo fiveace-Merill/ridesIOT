@@ -14,8 +14,8 @@ function Login() {
                         <p className='text-lg text-white text-justify m-2 p-2 md:m-0 md:text-4xl md:text-center md:mt-10 md:h-full md:text-forest_green-200'>Glad to have you back, just a few steps...</p>
                     </div>
                     <form className="flex flex-col justify-center  self-center w-4/6 h-2/6 md:self-center">
-                        <input type='email' placeholder="email" className="my-3 h-8 rounded-lg pl-2 md:border-2 md:border-forest_green-400"></input>
-                        <input type='password' placeholder="password" className="my-3 h-8 rounded-lg pl-2 md:border-2 md:border-forest_green-400"></input>
+                        <input type='email' placeholder="email" className="my-3 h-8 w-full rounded-lg pl-2 md:border-2 md:border-forest_green-400"></input>
+                        <input type='password' placeholder="password" className="my-3 h-8 w-full rounded-lg pl-2 md:border-2 md:border-forest_green-400"></input>
                     </form>
                     <button className="p-2 my-3 mt-5 rounded-md bg-forest_green-400 w-32 self-center md:p-3 md:my-2 text-white text-sm md:rounded-2xl md:justify-center">Login</button>
                 </div>

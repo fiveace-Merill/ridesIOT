@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react"
-import { addDoc, deleteDoc, onSnapshot, collection, doc, query, where } from "firebase/firestore";
+import { addDoc, deleteDoc, onSnapshot, collection, doc, query, where, updateDoc } from "firebase/firestore";
 import { db } from '../../index'
 import AddBike from "./AddBike";
 import DeleteBike from "./DeleteBike";
-// import UpdateBike from "./UpdateBike";
 import QueryBike from "./QueryBike";
+
 function Bike() {
 
     let colRef = collection(db, 'bikes')
 
     const [id, setId] = useState()
     let [query, setQuery] = useState({})
+
     const [bikeDetails, setBikeDetails] = useState({
         name: '',
         design: '',
@@ -27,6 +28,7 @@ function Bike() {
             suspension: '',
         }
     });
+
     const handleAddInputChange = (e) => {
         const { name, value } = e.target;
         if (name in bikeDetails.features) {
@@ -53,6 +55,7 @@ function Bike() {
             setId(value)
         }
     }
+
     const handleQueryInputChange = (event) => {
         const { value } = event.target
         if (value === '') {
@@ -61,6 +64,17 @@ function Bike() {
             setId(value)
         }
     }
+
+    const handleUpdateInputChange = (event) => {
+        const { value } = event.target
+        if (value = ' ') {
+            alert('Id id required')
+        } else {
+            setId(value)
+        }
+    }
+
+
     const handleAddSubmit = (event) => {
         event.preventDefault();
         // Check if any of the main fields are empty
@@ -78,6 +92,7 @@ function Bike() {
         // If all fields are filled, proceed to add the document to Firestore
         addDoc(colRef, bikeDetails);
     };
+
     const handleDeleteSubmit = (event) => {
         event.preventDefault();
         if (id) {
@@ -85,6 +100,16 @@ function Bike() {
             deleteDoc(docRef);
         } else {
             alert('Id is required');
+        }
+    }
+
+    const handleUpdateSubmit = (event) => {
+        event.preventDefault()
+        if (id) {
+            const docRef = doc(db, 'bikes', id);
+            updateDoc(docRef, {
+
+            })
         }
     }
 
@@ -102,7 +127,6 @@ function Bike() {
             });
         }
     }
-
 
     useEffect(() => {
         onSnapshot(colRef, (snapshot) => {
@@ -126,13 +150,12 @@ function Bike() {
                 <DeleteBike handleInputChange={handleDeleteInputChange} handleSubmit={handleDeleteSubmit}></DeleteBike>
             </div>
             <div className="md:row-start-2 md:col-2 md:bg-white md:rounded-lg md:shadow-xl md:shadow-robin_egg_blue-300 md:px-2 md:py-3">
-                <h3 className="text-center text-lg text-robin_egg_blue-400 font-extrabold">Delete Bike</h3>
+                <h3 className="text-center text-lg text-robin_egg_blue-400 font-extrabold">Query Bike</h3>
                 <QueryBike handleInputChange={handleQueryInputChange} handleSubmit={handleQuerySubmit} details={query}></QueryBike>
             </div>
             <div className="md:col-start-3 md:row-span-2 md:bg-white md:rounded-lg md:shadow-xl md:shadow-robin_egg_blue-300 md:px-2 md:py-3">
                 <h3>Update Bike</h3>
             </div>
-
         </div>
     )
 }
