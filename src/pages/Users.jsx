@@ -83,6 +83,7 @@ function Users() {
                                 <li>Thika</li>
                                 <li>Embakasi</li>
                                 <li>Lang'ata</li>
+                                <li>Gatundu</li>
                             </ul>
                         </div>
                     </div>
