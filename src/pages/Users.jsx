@@ -5,6 +5,8 @@ import DefaultIot from '../components/users/DefaultIot'
 import DefaultEvent from '../components/users/DefaultEvent'
 import { GrMenu } from 'react-icons/gr'
 import { useState } from 'react'
+import { signOut } from 'firebase/auth'
+import { auth } from '..'
 
 function Users() {
 
@@ -12,6 +14,11 @@ function Users() {
 
     function handleMenuClick() {
         console.log('clicked')
+    }
+    function handleSignOut() {
+        signOut(auth)
+            .then(() => console.log('signed out'))
+            .catch((err) => console.log(err.message))
     }
     function processProduct(item) {
         //Use item to select which product will be rendered 
@@ -26,7 +33,7 @@ function Users() {
                             <FaShoppingCart color='green' size={30}></FaShoppingCart>
                             <p className='absolute h-6 w-6 text-center bg-robin_egg_blue m-auto -top-2 -right-2 text-rich_black-500 rounded-full text-lg'>1</p>
                         </div>
-                        <button><FaSignOutAlt size={30} color='green'></FaSignOutAlt></button>
+                        <button><FaSignOutAlt size={30} color='green' onClick={handleSignOut}></FaSignOutAlt></button>
                         <button onClick={handleMenuClick}><GrMenu size={30} color='green'></GrMenu></button>
                     </div>
                 </div>
