@@ -1,32 +1,35 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 import bike from '../assets/bike1.jpg';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '..';
 function Login() {
     const [userEmail, setUserEmail] = useState('')
     const [userPassword, setUserPassword] = useState('')
-    
-    function handleEmailChange(event){
+    const navigate = useNavigate();
+
+    function handleEmailChange(event) {
         event.preventDefault()
         const { value } = event.target
         setUserEmail(value)
     }
-    function handlePasswordChange(event){
+    function handlePasswordChange(event) {
         event.preventDefault()
 
         const { value } = event.target
         setUserPassword(value)
     }
 
-    function handleSubmit(event){
-        event.preventDefault()
+    function handleSubmit(event) {
+        event.preventDefault();
         signInWithEmailAndPassword(auth, userEmail, userPassword)
-        .then((cred) => {
-            console.log(`signed in`)
-            setUserEmail(' ')
-            setUserPassword(' ')
-        })
-        .catch((err) => console.log(err.message))
+            .then((cred) => {
+                console.log('signed in');
+                setUserEmail('');
+                setUserPassword('');
+                navigate('/Users/1'); // This will redirect to the User component
+            })
+            .catch((err) => console.log(err.message));
     }
 
     return (
