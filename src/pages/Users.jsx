@@ -3,6 +3,7 @@ import logo from '../assets/logo2.jpeg'
 import DefaultBike from '../components/users/DefaultBike'
 import DefaultIot from '../components/users/DefaultIot'
 import DefaultEvent from '../components/users/DefaultEvent'
+import { useNavigate } from 'react-router'
 import { GrMenu } from 'react-icons/gr'
 import { useState } from 'react'
 import { signOut } from 'firebase/auth'
@@ -11,20 +12,25 @@ import { auth } from '..'
 function Users() {
 
     const [selectedBike, setSelectedBike] = useState()
+    const navigate = useNavigate()
 
     function handleMenuClick() {
         console.log('clicked')
     }
     function handleSignOut() {
         signOut(auth)
-            .then(() => console.log('signed out'))
+            .then(() => {
+                navigate("/")
+                console.log('signed out')
+            })
             .catch((err) => console.log(err.message))
+
     }
     function processProduct(item) {
         //Use item to select which product will be rendered 
     }
     return (
-        <div className="h-full bg-forest_green-900 w-screen py-2 md:h-screen">
+        <div className="h-full bg-forest_green-900 w-screen py-2 md:h-full box-border">
             <nav className='w-full h-16 '>
                 <div className='flex w-full h-full items-center justify-around'>
                     <img src={logo} className='h-10 w-10 rounded-full mr-auto ml-12' />
@@ -44,18 +50,12 @@ function Users() {
                     <li>Events</li>
                 </ul>
             </nav>
-            <main className=''>
-                <div className='flex flex-col md:grid md:h-9/12 md:grid-rows-1 md:grid-cols-3 md:gap-2'>
+            <main className='md:flex md:flex-col md:justify-center'>
+                <div className='flex flex-col md:grid md:h-9/12 md:grid-rows-1 md:grid-cols-3 md:gap-5 md:w-10/12 md:w-11/12 md:mx-[auto]'>
                     <DefaultBike handleClick={processProduct}></DefaultBike>
                 </div>
-                <div>
-                    <DefaultIot></DefaultIot>
-                </div>
-                <div>
-                    <DefaultEvent></DefaultEvent>
-                </div>
             </main>
-            <footer className='bg-forest_green-200 w-full text-white'>
+            <footer className='bg-forest_green-200 w-full text-white md:px-2 md:h-[350px] mx-auto md:mt-3'>
                 <div className='md:grid md:grid-rows-1 md:grid-cols-4'>
                     <div className='my-1 py-2 flex flex-col flex-1 items-center md:p-3 md:items-start'>
                         <h4 className='font-bold text-sm'>Contact us</h4>
