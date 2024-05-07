@@ -6,12 +6,12 @@ const handleClick = () => {
 
 function BikeProductCard() {
     return (
-        <div className='w-11/12 h-full mx-1 flex flex-col justify-center shadow-lg shadow-forest_green-700 md:w-9/12 md:h-[300px]'>
-            <div className='h-3/6 w-3/6 mx-2 my-2 border-2 self-center border-forest_green-100 bg-forest_green-300'>
+        <div className='w-5/12 h-full mx-1 flex flex-col justify-center shadow-lg shadow-forest_green-700 rounded-lg md:w-9/12 md:h-[300px]'>
+            <div className='h-2/6 w-2/6 mx-2 my-2 border-2 self-center border-forest_green-100 bg-forest_green-300 md:h-3/6 md:w-3/6'>
                 <img src={product} className='w-full h-full' />
             </div>
             <div className='w-full h-3/6 my-1 text-center'>
-                <div className='flex justify-around'>
+                <div className='flex justify-around text-xs md:text-md'>
                     <p>Scott</p>
                     <p>Mountain Bike</p>
                 </div>

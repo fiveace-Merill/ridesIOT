@@ -1,5 +1,6 @@
-import { FaShoppingCart, FaSignOutAlt, FaWindowClose, FaInstagram, FaTwitter, FaDiscord, FaWhatsapp, FaFacebook } from 'react-icons/fa'
+import { FaShoppingCart, FaSignOutAlt, FaWindowClose, FaInstagram, FaTwitter, FaDiscord, FaWhatsapp, FaFacebook, FaSearch } from 'react-icons/fa'
 import logo from '../assets/logo2.jpeg'
+import illustration from '../assets/video-iot.mp4'
 import DefaultBike from '../components/users/DefaultBike'
 import DefaultIot from '../components/users/DefaultIot'
 import DefaultEvent from '../components/users/DefaultEvent'
@@ -30,14 +31,18 @@ function Users() {
         //Use item to select which product will be rendered 
     }
     return (
-        <div className="h-full bg-forest_green-900 w-screen py-2 md:h-full box-border">
+        <div className="h-auto w-[99%] mx-auto bg-forest_green-900 md:h-full md:w-full">
             <nav className='w-full h-16 '>
                 <div className='flex w-full h-full items-center justify-around'>
-                    <img src={logo} className='h-10 w-10 rounded-full mr-auto ml-12' />
+                    <img src={logo} className='h-10 w-10 rounded-full mr-auto ml-9' />
                     <div className='flex justify-around w-6/12'>
+                            {/* <label className='md:relative md:w-auto'>
+                                <input type='text' className='md:w-auto md:h-full md:rounded-full'></input>
+                                <FaSearch className='inline-block md:absolute md:inline-block md:top-2.5 md:right-3'></FaSearch>
+                            </label> */}
                         <div className='relative mx-3'>
                             <FaShoppingCart color='green' size={30}></FaShoppingCart>
-                            <p className='absolute h-6 w-6 text-center bg-robin_egg_blue m-auto -top-2 -right-2 text-rich_black-500 rounded-full text-lg'>1</p>
+                            <p className='absolute h-4 w-4 text-center bg-robin_egg_blue m-auto -top-2 -right-2 text-rich_black-500 rounded-full text-xs'>1</p>
                         </div>
                         <button><FaSignOutAlt size={30} color='green' onClick={handleSignOut}></FaSignOutAlt></button>
                         <button onClick={handleMenuClick}><GrMenu size={30} color='green'></GrMenu></button>
@@ -50,12 +55,29 @@ function Users() {
                     <li>Events</li>
                 </ul>
             </nav>
+            <header className='relative'>
+            </header>
             <main className='md:flex md:flex-col md:justify-center'>
-                <div className='flex flex-col md:grid md:h-9/12 md:grid-rows-1 md:grid-cols-3 md:gap-5 md:w-10/12 md:w-11/12 md:mx-[auto]'>
-                    <DefaultBike handleClick={processProduct}></DefaultBike>
+                <div className='relative md:mb-5'>
+                    <h2 className='ml-10 text-start md:text-center md:text-lg'>Bikes</h2>
+                    <div className='flex flex-col md:grid md:h-9/12 md:grid-rows-1 md:grid-cols-3 md:gap-5 md:w-10/12 md:mx-[auto]'>
+                        <DefaultBike handleClick={processProduct}></DefaultBike>
+                    </div>
+                    <p className='absolute top-0 right-10 md:top-80 md:right-20'>view all</p>
+                </div>
+
+                <div className='relative md:mb-5'>
+                    <h2 className='ml-10 text-start md:text-center md:text-lg'>IoT Devices</h2>
+                    <div className='flex flex-col md:grid md:h-9/12 md:grid-rows-1 md:grid-cols-3 md:gap-5 md:w-10/12 md:mx-[auto]'>
+                        <DefaultIot handleClick={processProduct}></DefaultIot>
+                    </div>
+                    <p className='absolute top-0 right-10 md:top-80 md:right-20'>view all</p>
+                </div>
+                <div className='w-full h:auto md:h-[500px] md:rounded-lg md:mx-auto'>
+                    <DefaultEvent></DefaultEvent>
                 </div>
             </main>
-            <footer className='bg-forest_green-200 w-full text-white md:px-2 md:h-[350px] mx-auto md:mt-3'>
+            <footer className='bg-forest_green-200 h-full w-full text-white md:px-2 md:h-[350px] mx-auto md:mt-3'>
                 <div className='md:grid md:grid-rows-1 md:grid-cols-4'>
                     <div className='my-1 py-2 flex flex-col flex-1 items-center md:p-3 md:items-start'>
                         <h4 className='font-bold text-sm'>Contact us</h4>
@@ -79,6 +101,11 @@ function Users() {
                         <h4 className='font-bold text-sm '>Brands, Sponser's, Locations </h4>
                         <div className='py-3 flex flex-col w-full md:p-0 md:flex-row md:justify-between md:grow'>
                             <ul className='text-xs my-3 w-full flex justify-around md:ml-2 md:flex-col list-none md:flex-1'>
+                                <li>Poisson</li>
+                                <li>Trek</li>
+                                <li>Scott</li>
+                            </ul>
+                            <ul className='text-xs my-3 w-full flex justify-around md:ml-2 md:flex-col list-none md:flex-1'>
                                 <li>NumeralIot</li>
                                 <li>Ajiry</li>
                                 <li>Harley Davidson</li>
@@ -95,7 +122,7 @@ function Users() {
                         </div>
                     </div>
                 </div>
-                <div className='my-1 py-2 text-center md:p-3 md:row-start-2 md:col-span-4 md:h-auto text-sm '>
+                <div className='my-1 py-2 text-center md:p-3 md:row-start-2 md:col-span-4 md:h-auto text-sm md:mt-20'>
                     <p>Copyrights@2024<span className='text-xs italic'> developed by five-ace</span></p>
                 </div>
             </footer>
