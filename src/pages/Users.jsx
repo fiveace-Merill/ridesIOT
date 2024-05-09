@@ -61,6 +61,12 @@ function Users() {
                             <li className='hover:text-forest_green-400 user-page-phone-list'><a href='#bikes'>bikes</a></li>
                             <li className='hover:text-forest_green-400 user-page-phone-list'><a href='#iot'>iot</a></li>
                             <li className='hover:text-forest_green-400 user-page-phone-list'><a href='#events'>events</a></li>
+                            <li className='md:flex md:items-center'>
+                                <div className='flex flex-row justify-around items-center md:flex-row md:justify-around mt-4'>
+                                        <button className='rounded-md bg-forest_green-400 text-white h-9 w-40 text-base mb-4 hover:bg-robin_egg_blue-400 md:mx-3' onClick={handleSignOut}>Sign Out</button>
+                                </div>
+                            </li>
+
                         </ul>
 
                     </div>
