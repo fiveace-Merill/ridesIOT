@@ -1,23 +1,40 @@
 import { FaShoppingCart, FaSignOutAlt, FaWindowClose, FaInstagram, FaTwitter, FaDiscord, FaWhatsapp, FaFacebook, FaSearch } from 'react-icons/fa'
 import logo from '../assets/logo2.jpeg'
-import illustration from '../assets/video-iot.mp4'
+import '../style/users/users.css'
 import DefaultBike from '../components/users/DefaultBike'
 import DefaultIot from '../components/users/DefaultIot'
 import DefaultEvent from '../components/users/DefaultEvent'
 import { useNavigate } from 'react-router'
 import { GrMenu } from 'react-icons/gr'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { signOut } from 'firebase/auth'
 import { auth } from '..'
 
 function Users() {
 
-    const [selectedBike, setSelectedBike] = useState()
+    const [isOpen, setIsOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const [isLogoVisible, setIsLogoVisible] = useState(true);
+
     const navigate = useNavigate()
 
-    function handleMenuClick() {
-        console.log('clicked')
-    }
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+        setIsLogoVisible(!isLogoVisible);
+    };
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     function handleSignOut() {
         signOut(auth)
             .then(() => {
@@ -27,38 +44,44 @@ function Users() {
             .catch((err) => console.log(err.message))
 
     }
+
     function processProduct(item) {
         //Use item to select which product will be rendered 
     }
     return (
         <div className="h-auto w-[99%] mx-auto bg-forest_green-900 md:h-full md:w-full">
-            <nav className='w-full h-16 '>
-                <div className='flex w-full h-full items-center justify-around'>
-                    <img src={logo} className='h-10 w-10 rounded-full mr-auto ml-9' />
-                    <div className='flex justify-around w-6/12'>
-                            {/* <label className='md:relative md:w-auto'>
-                                <input type='text' className='md:w-auto md:h-full md:rounded-full'></input>
-                                <FaSearch className='inline-block md:absolute md:inline-block md:top-2.5 md:right-3'></FaSearch>
-                            </label> */}
-                        <div className='relative mx-3'>
-                            <FaShoppingCart color='green' size={30}></FaShoppingCart>
-                            <p className='absolute h-4 w-4 text-center bg-robin_egg_blue m-auto -top-2 -right-2 text-rich_black-500 rounded-full text-xs'>1</p>
-                        </div>
-                        <button><FaSignOutAlt size={30} color='green' onClick={handleSignOut}></FaSignOutAlt></button>
-                        <button onClick={handleMenuClick}><GrMenu size={30} color='green'></GrMenu></button>
+            <nav className='flex flex-1 justify-between pr-2 py-4' style={{ zIndex: isOpen ? 1 : 0 }}>
+                {isLogoVisible && <img src={logo} className='h-10 w-10 ml-6 rounded-full md:self-center md:ml-20' />}
+                {(isMobile && isOpen) || !isMobile ? (
+                    <div className='animate__animated animate__slideInDown flex flex-col md:w-3/5'>
+                        {isMobile && isOpen && (
+                            <button onClick={toggleMenu} className='h-10 w-10 self-end p-1 mr-5'><FaWindowClose></FaWindowClose></button>
+                        )}
+                        <ul className='cursor-pointer pl-2 text-sm text-robin_egg_blue flex flex-col justify-between list-none align-start align-self-end w-screen menu md:flex-row md:w-auto md:p-2 md:items-center md:flex-1 md:space-x-4 md:text-base'>
+                            <li className='hover:text-forest_green-400 user-page-phone-list'><a href='#bikes'>bikes</a></li>
+                            <li className='hover:text-forest_green-400 user-page-phone-list'><a href='#iot'>iot</a></li>
+                            <li className='hover:text-forest_green-400 user-page-phone-list'><a href='#events'>events</a></li>
+                        </ul>
+
                     </div>
-                </div>
-                <ul className='hidden flex flex-col h-full justify-around pl-2 absolute top-0 left-0 w-full bg-robin_egg_blue-100 text-white opacity-100 rounded-b-xl shadow-md shadow-robin_egg_blue-800'>
-                    <li className='close-menu self-end mr-2'><FaWindowClose size={22}></FaWindowClose></li>
-                    <li>Bikes</li>
-                    <li>IoT</li>
-                    <li>Events</li>
-                </ul>
-            </nav>
+                ) : null}
+                {isMobile && !isOpen && (
+                    <div className='flex items-center justify-between w-3/6'>
+                        <div>
+                            <FaShoppingCart></FaShoppingCart>
+                        </div>
+                        <div>
+                            <FaSignOutAlt onClick={handleSignOut}></FaSignOutAlt>
+                        </div>
+                        <button onClick={toggleMenu} className='h-8 w-8'><GrMenu></GrMenu></button>
+                    </div>
+                )
+                }
+            </nav >
             <header className='relative'>
             </header>
             <main className='md:flex md:flex-col md:justify-center'>
-                <div className='relative md:mb-5'>
+                <div className='relative md:mb-5' id='bikes'>
                     <h2 className='ml-10 text-start md:text-center md:text-lg'>Bikes</h2>
                     <div className='flex flex-col md:grid md:h-9/12 md:grid-rows-1 md:grid-cols-3 md:gap-5 md:w-10/12 md:mx-[auto]'>
                         <DefaultBike handleClick={processProduct}></DefaultBike>
@@ -66,14 +89,14 @@ function Users() {
                     <p className='absolute top-0 right-10 md:top-80 md:right-20'>view all</p>
                 </div>
 
-                <div className='relative md:mb-5'>
+                <div className='relative md:mb-5' id='iot'>
                     <h2 className='ml-10 text-start md:text-center md:text-lg'>IoT Devices</h2>
                     <div className='flex flex-col md:grid md:h-9/12 md:grid-rows-1 md:grid-cols-3 md:gap-5 md:w-10/12 md:mx-[auto]'>
                         <DefaultIot handleClick={processProduct}></DefaultIot>
                     </div>
                     <p className='absolute top-0 right-10 md:top-80 md:right-20'>view all</p>
                 </div>
-                <div className='w-full h:auto md:h-[500px] md:rounded-lg md:mx-auto'>
+                <div className='w-full h:auto md:h-[500px] md:rounded-lg md:mx-auto' id='events'>
                     <DefaultEvent></DefaultEvent>
                 </div>
             </main>
@@ -126,7 +149,7 @@ function Users() {
                     <p>Copyrights@2024<span className='text-xs italic'> developed by five-ace</span></p>
                 </div>
             </footer>
-        </div>
+        </div >
     )
 }
 

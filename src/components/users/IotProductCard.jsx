@@ -16,8 +16,8 @@ function IotProductCard() {
                     <p>ref/freezer</p>
                 </div>
                 <p className='text-pretty p-1 text-[9px] box-border h-2/4'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores hic nisi repudiandae. Fugit, reiciendis culpa</p>
-                <div className='w-full box-border p-1' onClick={handleClick}>
-                    <button className='bg-forest_green-200 text-white rounded-md p-2 text-center text-[8px]'>Add to Cart</button>
+                <div className='w-full box-border p-1'>
+                    <button className='bg-forest_green-200 text-white rounded-md p-2 text-center text-[8px]' onClick={handleClick}>Add to Cart</button>
                 </div>
             </div>
         </div>
