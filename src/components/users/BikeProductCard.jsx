@@ -7,7 +7,7 @@ const handleClick = (event) => {
     console.log(event.target.textContent)
 }
 
-function BikeProductCard({ name, price, design, description }) {
+function BikeProductCard({ name, price, design }) {
     return (
         <div className='w-5/12 h-full mx-1 flex flex-col justify-center shadow-lg shadow-forest_green-700 rounded-lg md:w-9/12 md:h-[300px]'>
             <h4 className="text-center hover:text-md hover:text-forest_green-300 hover:cursor-pointer font-bold" onClick={handleClick}>{name}</h4>
@@ -17,7 +17,7 @@ function BikeProductCard({ name, price, design, description }) {
             <div className='w-full h-3/6 my-1 text-center'>
                 <div className='flex justify-around text-xs md:text-md'>
                     <p className='text-md'>ksh <span className='font-bold'>{price}</span></p>
-                    <p>{design}</p>
+                    <p onClick={handleClick}>{design}</p>
                 </div>
                 <p className='text-pretty p-1 text-[9px] box-border h-2/4'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores hic nisi repudiandae. Fugit, reiciendis culpa</p>
                 <div className='w-full box-border p-1'>

@@ -53,7 +53,7 @@ function Users() {
             <nav className='flex flex-1 justify-between pr-2 py-4' style={{ zIndex: isOpen ? 1 : 0 }}>
                 {isLogoVisible && <img src={logo} className='h-10 w-10 ml-6 rounded-full md:self-center md:ml-20' />}
                 {(isMobile && isOpen) || !isMobile ? (
-                    <div className='animate__animated animate__slideInDown flex flex-col md:w-3/5'>
+                    <div className='animate__animated animate__slideInDown flex flex-col md:w-5/12'>
                         {isMobile && isOpen && (
                             <button onClick={toggleMenu} className='h-10 w-10 self-end p-1 mr-5'><FaWindowClose></FaWindowClose></button>
                         )}
@@ -63,7 +63,7 @@ function Users() {
                             <li className='hover:text-forest_green-400 user-page-phone-list'><a href='#events'>events</a></li>
                             <li className='md:flex md:items-center'>
                                 <div className='flex flex-row justify-around items-center md:flex-row md:justify-around mt-4'>
-                                        <button className='rounded-md bg-forest_green-400 text-white h-9 w-40 text-base mb-4 hover:bg-robin_egg_blue-400 md:mx-3' onClick={handleSignOut}>Sign Out</button>
+                                    <button className='rounded-md bg-forest_green-400 text-white h-9 w-40 text-base mb-4 hover:bg-robin_egg_blue-400 md:mx-3' onClick={handleSignOut}>Sign Out</button>
                                 </div>
                             </li>
 
@@ -74,12 +74,12 @@ function Users() {
                 {isMobile && !isOpen && (
                     <div className='flex items-center justify-between w-3/6'>
                         <div>
-                            <FaShoppingCart></FaShoppingCart>
+                            <FaShoppingCart size={20}></FaShoppingCart>
                         </div>
                         <div>
-                            <FaSignOutAlt onClick={handleSignOut}></FaSignOutAlt>
+                            <FaSignOutAlt onClick={handleSignOut} size={20}></FaSignOutAlt>
                         </div>
-                        <button onClick={toggleMenu} className='h-8 w-8'><GrMenu></GrMenu></button>
+                        <button onClick={toggleMenu} className='h-8 w-8'><GrMenu size={20}></GrMenu></button>
                     </div>
                 )
                 }
