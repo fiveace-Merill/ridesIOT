@@ -89,15 +89,14 @@ function Users() {
             <main className='md:flex md:flex-col md:justify-center'>
                 <div className='relative md:mb-5' id='bikes'>
                     <h2 className='ml-10 text-start md:text-center md:text-lg'>Bikes</h2>
-                    <div className='flex flex-col md:grid md:h-9/12 md:grid-rows-1 md:grid-cols-3 md:gap-5 md:w-10/12 md:mx-[auto]'>
+                    <div className='flex flex-col'>
                         <DefaultBike handleClick={processProduct}></DefaultBike>
                     </div>
-                    <p className='absolute top-0 right-10 md:top-80 md:right-20'>view all</p>
                 </div>
 
                 <div className='relative md:mb-5' id='iot'>
                     <h2 className='ml-10 text-start md:text-center md:text-lg'>IoT Devices</h2>
-                    <div className='flex flex-col md:grid md:h-9/12 md:grid-rows-1 md:grid-cols-3 md:gap-5 md:w-10/12 md:mx-[auto]'>
+                    <div className='flex flex-col md:grid md:h-10/12 md:grid-rows-1 md:grid-cols-3 md:gap-5 md:w-10/12 md:mx-[auto]'>
                         <DefaultIot handleClick={processProduct}></DefaultIot>
                     </div>
                     <p className='absolute top-0 right-10 md:top-80 md:right-20'>view all</p>

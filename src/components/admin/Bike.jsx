@@ -30,6 +30,7 @@ function Bike() {
     });
 
     const handleAddInputChange = (e) => {
+        e.preventDefault()
         const { name, value } = e.target;
         if (name in bikeDetails.features) {
             setBikeDetails({
@@ -91,6 +92,23 @@ function Bike() {
         }
         // If all fields are filled, proceed to add the document to Firestore
         addDoc(colRef, bikeDetails);
+        setBikeDetails({
+            name: '',
+            design: '',
+            price: '',
+            description: '',
+            features: {
+                brake_type: '',
+                wheel_size: '',
+                frame_material: '',
+                color: '',
+                gears: '',
+                tires: '',
+                weight: '',
+                suspension: '',
+            }
+        }
+        )
     };
 
     const handleDeleteSubmit = (event) => {
@@ -134,7 +152,7 @@ function Bike() {
             snapshot.forEach((doc) => {
                 bikes.push({ ...doc.data(), id: doc.id })
             })
-            console.log(bikes)
+            //This has a problem of rendering alot fix later
         })
     }, [bikeDetails])
 
